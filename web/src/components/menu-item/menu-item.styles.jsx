@@ -68,5 +68,3 @@ export const MenuItemContainer = styled.div`
     background-size: cover;
   }
 `;
-
-export const BackgroundImage = styled.div``;
