@@ -1,7 +1,6 @@
 import React from "react";
 import "./form-input.styles";
 import { GroupContainer, Input } from "./form-input.styles";
-import { css } from "@emotion/core";
 
 const FormInput = ({ handleChange, label, ...otherProps }) => (
   <GroupContainer>

@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
 
 export const Container = styled.button`
   min-width: 165px;
