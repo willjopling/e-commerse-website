@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/core";
 
 export const Container = styled.button`
   min-width: 165px;
@@ -21,4 +22,14 @@ export const Container = styled.button`
     color: black;
     border: 1px solid black;
   }
+
+  &.google-sign-in {
+    background-color: #4285f4;
+  color: white;
+  &:hover{
+    background-color: #357ae8;
+    border: none;
+    
+  }
+
 `;
