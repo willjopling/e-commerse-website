@@ -12,7 +12,7 @@ const CollectionPreview = ({ title, items }) => (
           return idx < 4;
         })
         .map(({ id, ...otherItemProps }) => (
-          <CollectionItem id={id} {...otherItemProps} />
+          <CollectionItem key={id} {...otherItemProps} />
         ))}
     </Preview>
   </Container>

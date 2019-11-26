@@ -9,7 +9,7 @@ import {
 } from "./collection-item.styles";
 
 const CollectionItem = ({ id, name, price, imageUrl }) => (
-  <Container>
+  <Container id={id}>
     <Image
       style={{
         backgroundImage: `url(${imageUrl})`
