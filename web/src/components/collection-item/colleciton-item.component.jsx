@@ -1,5 +1,5 @@
 import React from "react";
-
+import { connect } from "react-redux";
 import {
   Container,
   Image,
@@ -8,18 +8,33 @@ import {
   Price
 } from "./collection-item.styles";
 
-const CollectionItem = ({ id, name, price, imageUrl }) => (
-  <Container id={id}>
-    <Image
-      style={{
-        backgroundImage: `url(${imageUrl})`
-      }}
-    />
-    <CollectionFooter>
-      <Name>{name}</Name>
-      <Price>{price}</Price>
-    </CollectionFooter>
-  </Container>
-);
+import CustomButton from "../custom-button/custom-button.component";
+import { addItem } from "../../redux/cart/cart.actions";
 
-export default CollectionItem;
+const CollectionItem = ({ item, addItem }) => {
+  const { name, price, imageUrl } = item;
+
+  return (
+    <Container>
+      <Image
+        className="image"
+        style={{
+          backgroundImage: `url(${imageUrl})`
+        }}
+      />
+      <CollectionFooter>
+        <Name>{name}</Name>
+        <Price>{price}</Price>
+      </CollectionFooter>
+      <CustomButton inverted onClick={() => addItem(item)}>
+        ADD TO CART
+      </CustomButton>
+    </Container>
+  );
+};
+
+const mapDispatchToProps = dispatch => ({
+  addItem: item => dispatch(addItem(item))
+});
+
+export default connect(null, mapDispatchToProps)(CollectionItem);

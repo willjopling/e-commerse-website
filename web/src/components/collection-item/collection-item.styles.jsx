@@ -6,6 +6,26 @@ export const Container = styled.div`
   flex-direction: column;
   height: 350px;
   align-items: center;
+  position: relative;
+
+  .custom-button {
+    width: 80%;
+    opacity: 0.7;
+    position: absolute;
+    top: 255px;
+    display: none;
+  }
+
+  &:hover {
+    .custom-button {
+      opacity: 0.85;
+      display: flex;
+    }
+
+    .image {
+      opacity: 0.85;
+    }
+  }
 `;
 
 export const Image = styled.div`

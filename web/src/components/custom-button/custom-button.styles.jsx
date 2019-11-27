@@ -15,11 +15,25 @@ export const Container = styled.button`
   font-weight: bolder;
   border: none;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     background-color: white;
     color: black;
     border: 1px solid black;
+  }
+  
+  &.inverted {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
   }
 
   &.google-sign-in {
@@ -30,5 +44,6 @@ export const Container = styled.button`
     border: none;
     
   }
+
 
 `;
