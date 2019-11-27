@@ -31,6 +31,7 @@ export const Name = styled.span`
 export const Quantity = styled.span`
   ${checkoutItemSpanWidth}
   padding-left: 20px;
+  display: flex;
 `;
 
 export const Price = styled.span`
@@ -40,4 +41,12 @@ export const Price = styled.span`
 export const RemoveButton = styled.div`
   padding-left: 12px;
   cursor: pointer;
+`;
+
+export const Arrow = styled.div`
+  cursor: pointer;
+`;
+
+export const Value = styled.div`
+  margin: 0 10px;
 `;
