@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
 export const MenuItemContainer = styled.div`
   min-width: 30%;

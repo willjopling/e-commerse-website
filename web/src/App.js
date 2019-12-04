@@ -5,7 +5,9 @@ import Shop from "./pages/shop/shop.component";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./components/header/header.component";
 import SigninSignupPage from "./pages/sign-in-sign-up/sign-in-sign-up.component";
+
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+
 import { connect } from "react-redux";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 

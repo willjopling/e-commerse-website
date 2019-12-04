@@ -1,4 +1,17 @@
-import styled from "@emotion/styled";
+import styled, { css } from "styled-components";
+import CustomButton from "../custom-button/custom-button.component";
+
+const imageHoverStyles = css`
+  opacity: 0.85;
+`;
+
+export const CollectionItemCustomButton = styled(CustomButton)`
+  width: 80%;
+  opacity: 0.7;
+  position: absolute;
+  top: 255px;
+  display: none;
+`;
 
 export const Container = styled.div`
   width: 22vw;
@@ -7,23 +20,12 @@ export const Container = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
-
-  .custom-button {
-    width: 80%;
-    opacity: 0.7;
-    position: absolute;
-    top: 255px;
-    display: none;
-  }
-
   &:hover {
-    .custom-button {
+    ${imageHoverStyles}
+
+    button {
       opacity: 0.85;
       display: flex;
-    }
-
-    .image {
-      opacity: 0.85;
     }
   }
 `;

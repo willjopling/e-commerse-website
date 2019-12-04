@@ -1,6 +1,46 @@
-import styled from "@emotion/styled";
+import styled, { css } from "styled-components";
 
-export const Container = styled.button`
+const buttonStyles = css`
+  background-color: black;
+  color: white;
+  border: none;
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+`;
+
+const invertedButtonStyles = css`
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+`;
+
+const googleSignInStyles = css`
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  &:hover {
+    background-color: #357ae8;
+    border: none;
+  }
+`;
+
+const getButtonStyles = props => {
+  if (props.isGoogleSignIn) {
+    return googleSignInStyles;
+  }
+
+  return props.isInverted ? invertedButtonStyles : buttonStyles;
+};
+
+export const CustomButtonContainer = styled.button`
   min-width: 165px;
   width: auto;
   height: 50px;
@@ -8,42 +48,13 @@ export const Container = styled.button`
   line-height: 50px;
   padding: 0 35px 0 35px;
   font-size: 15px;
-  background-color: black;
-  color: white;
+
   text-transform: uppercase;
   font-family: "Open Sans Condensed";
   font-weight: bolder;
-  border: none;
+
   cursor: pointer;
   display: flex;
   justify-content: center;
-
-  &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-  }
-  
-  &.inverted {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-
-
-    &:hover {
-      background-color: black;
-      color: white;
-    }
-  }
-
-  &.google-sign-in {
-    background-color: #4285f4;
-  color: white;
-  &:hover{
-    background-color: #357ae8;
-    border: none;
-    
-  }
-
-
+  ${getButtonStyles}
 `;

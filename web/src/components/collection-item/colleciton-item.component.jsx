@@ -5,10 +5,10 @@ import {
   Image,
   CollectionFooter,
   Name,
-  Price
+  Price,
+  CollectionItemCustomButton
 } from "./collection-item.styles";
 
-import CustomButton from "../custom-button/custom-button.component";
 import { addItem } from "../../redux/cart/cart.actions";
 
 const CollectionItem = ({ item, addItem }) => {
@@ -26,9 +26,13 @@ const CollectionItem = ({ item, addItem }) => {
         <Name>{name}</Name>
         <Price>{price}</Price>
       </CollectionFooter>
-      <CustomButton inverted onClick={() => addItem(item)}>
+      <CollectionItemCustomButton
+        className="custom-button"
+        isInverted
+        onClick={() => addItem(item)}
+      >
         ADD TO CART
-      </CustomButton>
+      </CollectionItemCustomButton>
     </Container>
   );
 };
